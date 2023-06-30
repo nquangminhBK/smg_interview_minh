@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 
-import 'constants.dart';
+import '../constants.dart';
+import '../logging/dio_intercepter_logger.dart';
 
 class DioClient {
   DioClient._internal();
@@ -31,5 +32,5 @@ class DioClient {
                   Headers.contentTypeHeader: 'application/json',
                 },
         ),
-      );
+      )..interceptors.add(DioInterceptorLogging());
 }

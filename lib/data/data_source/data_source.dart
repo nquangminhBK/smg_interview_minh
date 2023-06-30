@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:minh_interview_project/core/constants.dart';
-import 'package:minh_interview_project/core/http_requester.dart';
+import 'package:minh_interview_project/core/http_requester/http_requester.dart';
 import 'package:minh_interview_project/data/model/Vehicle_model.dart';
 
 abstract class DataSource {

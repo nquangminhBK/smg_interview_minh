@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minh_interview_project/core/extensions.dart';
 import 'package:minh_interview_project/domain/entities/vehicle_entity.dart';
 
 class ItemVehicle extends StatelessWidget {
@@ -7,6 +8,10 @@ class ItemVehicle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle style = Theme.of(context)
+        .textTheme
+        .bodyLarge!
+        .copyWith(color: context.currentAppColor.titleTextColor);
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.lightBlue),
@@ -17,11 +22,12 @@ class ItemVehicle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Model: ${vehicleEntity.model ?? "unknown"}"),
-          Text("Make by: ${vehicleEntity.make}"),
-          Text("First registration: ${vehicleEntity.firstRegMonth}/${vehicleEntity.firstRegYear}"),
-          Text("Price: ${vehicleEntity.price.toString()}"),
-          Text("Km: ${vehicleEntity.km.toString()}"),
+          Text("Model: ${vehicleEntity.model ?? "unknown"}", style: style),
+          Text("Make by: ${vehicleEntity.make}", style: style),
+          Text("First registration: ${vehicleEntity.firstRegMonth}/${vehicleEntity.firstRegYear}",
+              style: style),
+          Text("Price: ${vehicleEntity.price.toString()}", style: style),
+          Text("Km: ${vehicleEntity.km.toString()}", style: style),
         ],
       ),
     );
